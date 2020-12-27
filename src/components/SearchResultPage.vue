@@ -39,6 +39,7 @@
 <script>
 
 
+
 import SearchResultList from "./SearchResultList.vue"
 
 export default {

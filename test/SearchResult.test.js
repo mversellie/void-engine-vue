@@ -16,7 +16,7 @@ describe("testing search result component", () => {
         // The render method returns a collection of utilities to query your component.
         var renderedComponent = shallowMount(SearchResultComponent, mountOptions)
 
-        expect(renderedComponent.classes()).toContain("search-result")
+        expect(renderedComponent.html()).toContain("search-result")
     });
 
     it('makes title block', async () => {
