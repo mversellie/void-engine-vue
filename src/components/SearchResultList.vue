@@ -1,8 +1,6 @@
 <template>
   <div class="search-result-list">
-    <span v-for="searchResult in results" :key="searchResult.link">
-      <search-result :link="searchResult.link" :title="searchResult.title"></search-result>
-    </span>
+      <search-result v-for="searchResult in results" :link="searchResult.link" :title="searchResult.title" :key="searchResult.link"></search-result>
   </div>
 </template>
 
