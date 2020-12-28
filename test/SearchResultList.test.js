@@ -6,7 +6,7 @@ describe("testing search result list component", () => {
 
     var aSingleResultData = {
         "title": "a Title",
-        "link": "aplace.here"
+        "url": "aplace.here"
     };
 
     var resultsList = {

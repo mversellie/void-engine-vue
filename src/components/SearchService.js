@@ -1,12 +1,12 @@
 import axios from "axios";
 
-var solrEndpoint = "http://localhost:8983/solr/nutch/select?q=content%3A(";
-var solrEnding = ")&wt=json";
+var solrEndpoint = "http://localhost:8983/solr/nutch/select";
 
 export default {
     callSearch: function (query) {
         var defaultQuery = "*";
         var generatedQuery = defaultQuery;
+        var config = {};
 
         if (query) {
             var splitWordsFromQuery = query.split(/[ ,]+/);
@@ -17,9 +17,13 @@ export default {
             generatedQuery = apendedWordsWithSpaces.substring(0,locationOflastApendedSpace);
         }
 
-        var generatedQueryUrl = solrEndpoint + generatedQuery + solrEnding;
+        config["params"] = {"q":"content:" + generatedQuery , "wt":"json"}
 
 
-        return axios.get(generatedQueryUrl)
+        return axios.get(solrEndpoint,config)
+    },
+
+    convertToResults: function(raw){
+        return raw.response.docs;
     }
 }

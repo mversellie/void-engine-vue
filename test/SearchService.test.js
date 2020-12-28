@@ -15,7 +15,7 @@ describe("testing search service unit", () => {
             expect(data.response.numFound).toEqual(2));
     });
 
-    it('calls axios with start of url and end of url', async () => {
+    it('calls axios with start of url', async () => {
 
         axios.get.mockResolvedValue(mockSolr.mockLucene());
 
@@ -23,8 +23,19 @@ describe("testing search service unit", () => {
 
         var urlArg = axios.get.mock.calls[0][0]
 
-        expect(urlArg).toContain("http://localhost:8983/solr/nutch/select?q=content%3A(")
-        expect(urlArg).toContain(")&wt=json")
+        expect(urlArg).toContain("http://localhost:8983/solr/nutch/select")
+    });
+
+    it('calls axios with return type json', async () => {
+
+        axios.get.mockResolvedValue(mockSolr.mockLucene());
+
+        SearchService.callSearch("dzone work");
+
+        var parameters = axios.get.mock.calls[0][1]
+
+
+        expect(parameters.params.wt).toBe("json")
     });
 
     it('calls axios with search terms', async () => {
@@ -35,9 +46,9 @@ describe("testing search service unit", () => {
 
         SearchService.callSearch("dzone work");
 
-        var urlArg = axios.get.mock.calls[testNumber][0]
+        var parameters = axios.get.mock.calls[testNumber][1];
 
-        expect(urlArg).toContain("dzone%20work")
+        expect(parameters.params.q).toBe("content%3A(dzone%20work)");
     });
 
     it('calls axios with * if blank query', async () => {
@@ -45,9 +56,9 @@ describe("testing search service unit", () => {
 
         SearchService.callSearch("");
 
-        var urlArg = axios.get.mock.calls[0][0]
+        var parameters = axios.get.mock.calls[0][1];
 
-        expect(urlArg).toContain("*")
+        expect(parameters.params.q).toBe('content%3A(*)');
     });
 
 });

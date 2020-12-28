@@ -5,7 +5,7 @@ describe("testing search result component", () => {
 
     var searchData = {
         "title": "a Title",
-        "link": "aplace.here"
+        "url": "aplace.here"
     };
 
     var mountOptions = {
@@ -28,12 +28,12 @@ describe("testing search result component", () => {
         expect(renderedTitleText).toContain("a Title")
     });
 
-    it('makes title block link', async () => {
+    it('makes title block url', async () => {
         // The render method returns a collection of utilities to query your component.
         var renderedComponent = shallowMount(SearchResultComponent, mountOptions)
-        var renderedTitleLink = renderedComponent.find(".result-title a");
-        var actualLink = renderedTitleLink.element.attributes.getNamedItem("href").value
+        var renderedTitleurl = renderedComponent.find(".result-title a");
+        var actualurl = renderedTitleurl.element.attributes.getNamedItem("href").value
 
-        expect(actualLink).toContain("aplace.here")
+        expect(actualurl).toContain("aplace.here")
     });
 })

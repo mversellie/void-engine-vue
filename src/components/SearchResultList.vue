@@ -1,7 +1,7 @@
 <template>
-  <div class="search-result-list">
-      <search-result v-for="searchResult in results" :link="searchResult.link" :title="searchResult.title" :key="searchResult.link"></search-result>
-  </div>
+  <span class="search-result-span">
+      <search-result v-for="searchResult in results" :url="searchResult.url" :title="searchResult.title" :key="searchResult.url"></search-result>
+  </span>
 </template>
 
 <script>
@@ -17,5 +17,7 @@ export default {
 </script>
 
 <style scoped>
-
+.search-result-span{
+  min-width: 100%;
+}
 </style>

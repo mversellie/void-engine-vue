@@ -1,8 +1,7 @@
 <template>
-  <b-row class="text-center">
-  <div class="search-result ">
-    <div class="result-title"><a v-bind:href="link">{{ title }}</a></div>
-  </div>
+  <b-row>
+    <div class="search-result">
+      <div class="result-title"><a v-bind:href="url">{{ title }}</a></div></div>
   </b-row>
 </template>
 
@@ -10,7 +9,7 @@
 export default {
   name: "SearchResult.vue",
   props: {
-    link: String,
+    url: String,
     title: String,
     description: String
   }
@@ -18,5 +17,7 @@ export default {
 </script>
 
 <style scoped>
-
+.result-title{
+  text-align: left !important;
+}
 </style>

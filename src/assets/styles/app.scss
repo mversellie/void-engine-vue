@@ -14,8 +14,14 @@ html {
     border-color: red;
     border-width: thick;
     background-color: #ff5566;
+    padding:5%;
 }
 
 .search-result{
     padding:5%;
+    border-style: solid;
+    border-color: green;
+    border-width: thick;
+    margin-bottom: 20px;
+    min-width: 100%;
 }
