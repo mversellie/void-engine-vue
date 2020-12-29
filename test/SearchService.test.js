@@ -32,7 +32,7 @@ describe("testing search service unit", () => {
 
         SearchService.callSearch("dzone work");
 
-        var parameters = axios.get.mock.calls[0][1]
+        var parameters = axios.get.mock.calls[0][1];
 
 
         expect(parameters.params.wt).toBe("json")
@@ -48,7 +48,33 @@ describe("testing search service unit", () => {
 
         var parameters = axios.get.mock.calls[testNumber][1];
 
-        expect(parameters.params.q).toBe("content:dzone%20work");
+        expect(parameters.params.q).toContain("content:dzone%20work");
+    });
+
+    it('calls axios with search terms in content', async () => {
+
+        var testNumber = 2;
+
+        axios.get.mockResolvedValue(mockSolr.mockLucene());
+
+        SearchService.callSearch("dzone work");
+
+        var parameters = axios.get.mock.calls[testNumber][1];
+
+        expect(parameters.params.q).toContain("content:dzone%20work");
+    });
+
+    it('calls axios with search terms in description', async () => {
+
+        var testNumber = 2;
+
+        axios.get.mockResolvedValue(mockSolr.mockLucene());
+
+        SearchService.callSearch("dzone work");
+
+        var parameters = axios.get.mock.calls[testNumber][1];
+
+        expect(parameters.params.q).toContain("metatag.description:dzone%20work");
     });
 
     it('calls axios with * if blank query', async () => {
@@ -58,7 +84,7 @@ describe("testing search service unit", () => {
 
         var parameters = axios.get.mock.calls[0][1];
 
-        expect(parameters.params.q).toBe('content:*');
+        expect(parameters.params.q).toBe('*:*');
     });
 
     it('convertToResults Works', async () => {
