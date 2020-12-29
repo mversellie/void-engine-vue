@@ -61,4 +61,11 @@ describe("testing search service unit", () => {
         expect(parameters.params.q).toBe('content:*');
     });
 
+    it('convertToResults Works', async () => {
+        var actual = SearchService.convertToResults(mockSolr.mockLucene());
+        var expected = mockSolr.mockLucene().response.docs;
+
+        expect(actual).toStrictEqual(expected);
+    });
+
 });
