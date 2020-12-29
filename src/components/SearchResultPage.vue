@@ -11,11 +11,12 @@
               <h1 class="title">VOID ENGINE</h1>
               <div class="search-bar">
                 <b-button-toolbar aria-label="Toolbar with button groups and input groups">
-                  <b-button-group size="sm" class="mr-1" v-on:click="search" >
+                  <b-button-group size="sm" class="mr-1" v-on:click="search">
                     <b-button class="search-button">Search</b-button>
                   </b-button-group>
-                  <b-input-group style={min-width:800px} >
-                    <b-form-input v-model="searchQuery" v-on:keyup.enter="search" class="text-right search-field"></b-form-input>
+                  <b-input-group style={min-width:800px}>
+                    <b-form-input v-model="searchQuery" v-on:keyup.enter="search"
+                                  class="text-right search-field"></b-form-input>
                   </b-input-group>
                 </b-button-toolbar>
               </div>
@@ -24,10 +25,10 @@
             </b-col>
           </b-row>
           <b-row class="search-result-list">
-          <search-result-list :results="this.results"/>
+            <search-result-list :results="this.results"/>
           </b-row>
         </b-col>
-        <b-col col sm=12 md="2" lg="1" >
+        <b-col col sm=12 md="2" lg="1">
         </b-col>
       </b-row>
 
@@ -45,20 +46,21 @@ import SearchService from "@/components/SearchService.js";
 export default {
   name: "SearchResultPage.vue",
   components: {SearchResultList},
-  data: function() {
+  data: function () {
     return {
-      "searchQuery":"",
-      "results" : [{
+      "searchQuery": "",
+      "results": [{
         "title": "Lorem convallis lacindales tellu.i",
         "url": "aplace.here"
       }]
     }
   },
   methods: {
-    search(){
+    search() {
       SearchService.callSearch(this.searchQuery).then(response => {
         console.log(response.data);
-        this.results = SearchService.convertToResults(response.data)});
+        this.results = SearchService.convertToResults(response.data)
+      });
     }
   }
 }

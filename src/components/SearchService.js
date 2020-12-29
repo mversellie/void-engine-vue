@@ -14,16 +14,16 @@ export default {
             splitWordsFromQuery.forEach(element =>
                 apendedWordsWithSpaces += (element + '%20'));
             var locationOflastApendedSpace = apendedWordsWithSpaces.length - 3;
-            generatedQuery = apendedWordsWithSpaces.substring(0,locationOflastApendedSpace);
+            generatedQuery = apendedWordsWithSpaces.substring(0, locationOflastApendedSpace);
         }
 
-        config["params"] = {"q":"content:" + generatedQuery , "wt":"json"}
+        config["params"] = {"q": "content:" + generatedQuery, "wt": "json"}
 
 
-        return axios.get(solrEndpoint,config)
+        return axios.get(solrEndpoint, config)
     },
 
-    convertToResults: function(raw){
+    convertToResults: function (raw) {
         return raw.response.docs;
     }
 }

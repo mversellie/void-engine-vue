@@ -3,7 +3,7 @@
     <div class="search-result">
       <h4 class="result-title"><a v-bind:href="url">{{ title }}</a></h4>
       <hr class="result-title-content-border"/>
-      <p class="result-desc">{{description.substring(0,300)}}</p>
+      <p class="result-desc">{{ description.substring(0, 300) }}</p>
     </div>
   </b-row>
 </template>
@@ -20,11 +20,11 @@ export default {
 </script>
 
 <style scoped>
-.result-title{
+.result-title {
   text-align: left !important;
 }
 
-.result-desc{
+.result-desc {
   text-align: left !important;
 }
 </style>
