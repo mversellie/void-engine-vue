@@ -20,7 +20,7 @@ describe("testing search result list component", () => {
     it('makes outer div with class search-result-list', async () => {
         var renderedComponent = shallowMount(SearchResultListComponent, mountOptions)
 
-        expect(renderedComponent.classes()).toContain("search-result-list")
+        expect(renderedComponent.classes()).toContain("search-result-span")
     });
 
     it('creates a search result from list data', async () => {

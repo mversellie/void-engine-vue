@@ -5,7 +5,8 @@ describe("testing search result component", () => {
 
     var searchData = {
         "title": "a Title",
-        "url": "aplace.here"
+        "url": "aplace.here",
+        "description": "the description"
     };
 
     var mountOptions = {
@@ -35,5 +36,13 @@ describe("testing search result component", () => {
         var actualurl = renderedTitleurl.element.attributes.getNamedItem("href").value
 
         expect(actualurl).toContain("aplace.here")
+    });
+
+    it('makes description section', async () => {
+        // The render method returns a collection of utilities to query your component.
+        var renderedComponent = shallowMount(SearchResultComponent, mountOptions)
+        var renderedDesciption = renderedComponent.find(".result-desc");
+        var descriptionText = renderedDesciption.element.textContent;
+        expect(descriptionText).toContain("the description")
     });
 })

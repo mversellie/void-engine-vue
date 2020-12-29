@@ -48,7 +48,7 @@ describe("testing search service unit", () => {
 
         var parameters = axios.get.mock.calls[testNumber][1];
 
-        expect(parameters.params.q).toBe("content%3A(dzone%20work)");
+        expect(parameters.params.q).toBe("content:dzone%20work");
     });
 
     it('calls axios with * if blank query', async () => {
@@ -58,7 +58,7 @@ describe("testing search service unit", () => {
 
         var parameters = axios.get.mock.calls[0][1];
 
-        expect(parameters.params.q).toBe('content%3A(*)');
+        expect(parameters.params.q).toBe('content:*');
     });
 
 });
