@@ -1,27 +1,80 @@
 html {
-    background-color: black;
 }
 
-#app{
-    background-color: black;
-    border-style: solid;
-    border-color: blue;
-    border-width: thick;
+body{
+  background-image: linear-gradient(to right,#ff00c1,#00b8ff);
+  font-family: "vapor_text";
 }
 
-.search-result-list{
-    border-style: solid;
-    border-color: red;
-    border-width: thick;
-    background-color: #ff5566;
-    padding:5%;
+.search-bar{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  width: 40%;
 }
 
-.search-result{
-    padding:5%;
-    border-style: solid;
-    border-color: green;
-    border-width: thick;
-    margin-bottom: 20px;
-    min-width: 100%;
+.title{
+  font-family: "vapor_text";
+  font-size: 45pt;
+  color: white;
+}
+
+.search-button{
+  border: 2px solid white !important;
+  border-radius: 4px !important;
+  background-color: transparent !important;
+  color: white !important;
+  font-family: "vapor_text" !important;
+  font-weight: bold !important;
+}
+
+
+.search-field{
+  border: 2px solid white !important;
+  border-radius: 4px !important;
+  background-color: transparent !important;
+  color: white !important;
+  font-family: "vapor_text" !important;
+}
+
+#app {
+  background-color: transparent;
+  /*border-style: solid;
+  border-color: blue;
+  border-width: thick;*/
+}
+
+.search-result-list {
+  /*border-style: solid;
+  border-color: red;
+  border-width: thick;
+  padding: 5%;*/
+}
+
+.result-title-content-border{
+  border-style: solid;
+  border-color: white;
+  width: 45%;
+}
+
+.search-result {
+  color: white;
+  padding: 5%;
+  margin-bottom: 50px;
+  min-width: 100%;
+  border-style: solid;
+  border-color: white;
+  border-width: 3px;
+  border-radius: 50px 20px;
+  font-family: "vapor_text" !important;
+  /*box-shadow:
+          /*0 0 12px 6px #fff,  /* inner white */
+          /*0 0 20px 12px #00fff9 /* middle magenta */
+}
+
+@font-face {
+  font-family: 'vapor_text';
+  src: url('fonts/vapor_text.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }

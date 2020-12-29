@@ -1,6 +1,6 @@
 <template>
   <span class="search-result-span">
-      <search-result v-for="searchResult in results" :url="searchResult.url" :title="searchResult.title" :key="searchResult.url"></search-result>
+      <search-result v-for="searchResult in results" :url="searchResult.url" :title="searchResult.title" :key="searchResult.url" :description="searchResult.content"></search-result>
   </span>
 </template>
 

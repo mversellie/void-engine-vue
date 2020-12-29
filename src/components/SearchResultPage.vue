@@ -2,19 +2,20 @@
   <div id="search-result-page">
     <b-container fluid="md">
       <b-row class="text-center">
-        <b-col col md="2" sm="12"></b-col>
-        <b-col col md="8" sm="12">
+        <b-col col md="2" sm="12" lg="1"></b-col>
+        <b-col col md="8" sm="12" lg="10">
           <b-row class="text-center">
             <b-col col sm=12 md="1">
             </b-col>
             <b-col col sm=12 md="10">
-              <div>
+              <h1 class="title">VOID ENGINE</h1>
+              <div class="search-bar">
                 <b-button-toolbar aria-label="Toolbar with button groups and input groups">
                   <b-button-group size="sm" class="mr-1" v-on:click="search" >
-                    <b-button>Go</b-button>
+                    <b-button class="search-button">Search</b-button>
                   </b-button-group>
                   <b-input-group style={min-width:800px} >
-                    <b-form-input v-model="searchQuery" class="text-right"></b-form-input>
+                    <b-form-input v-model="searchQuery" v-on:keyup.enter="search" class="text-right search-field"></b-form-input>
                   </b-input-group>
                 </b-button-toolbar>
               </div>
@@ -26,7 +27,7 @@
           <search-result-list :results="this.results"/>
           </b-row>
         </b-col>
-        <b-col col sm=12 md="2" >
+        <b-col col sm=12 md="2" lg="1" >
         </b-col>
       </b-row>
 
