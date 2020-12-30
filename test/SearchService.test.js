@@ -1,4 +1,4 @@
-import SearchService from "@/components/SearchService.js"
+import SearchService from "@/components/SearchService.mjs"
 import axios from "axios";
 import mockSolr from "./mockSolrReturn.js"
 
@@ -48,7 +48,7 @@ describe("testing search service unit", () => {
 
         var parameters = axios.get.mock.calls[testNumber][1];
 
-        expect(parameters.params.q).toContain("content:dzone%20work");
+        expect(parameters.params.q).toContain('content:"dzone work"');
     });
 
     it('calls axios with search terms in content', async () => {
@@ -61,7 +61,7 @@ describe("testing search service unit", () => {
 
         var parameters = axios.get.mock.calls[testNumber][1];
 
-        expect(parameters.params.q).toContain("content:dzone%20work");
+        expect(parameters.params.q).toContain('content:"dzone work"');
     });
 
     it('calls axios with search terms in description', async () => {
@@ -74,7 +74,7 @@ describe("testing search service unit", () => {
 
         var parameters = axios.get.mock.calls[testNumber][1];
 
-        expect(parameters.params.q).toContain("metatag.description:dzone%20work");
+        expect(parameters.params.q).toContain('metatag.description:"dzone work"');
     });
 
     it('calls axios with * if blank query', async () => {

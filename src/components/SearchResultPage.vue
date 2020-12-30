@@ -41,7 +41,7 @@
 
 
 import SearchResultList from "./SearchResultList.vue"
-import SearchService from "@/components/SearchService.js";
+import SearchService from "@/components/SearchService.mjs";
 
 export default {
   name: "SearchResultPage.vue",
