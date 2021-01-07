@@ -1,5 +1,5 @@
 import axios from "axios";
-var solrEndpoint = "http://localhost:8983/solr/nutch/select";
+var solrEndpoint = "http://api.voidengine.io/solr/nutch/select";
 
 export default {
 
@@ -18,6 +18,7 @@ export default {
         console.log(generatedQuery)
         config["params"] = {"q": generatedQuery , "wt": "json"}
         config["paramsSerializer"] = this.serializeParams
+        config["auth"] = {"username":"search-user","password":"search"}
 
         return axios.get(solrEndpoint, config)
     },
