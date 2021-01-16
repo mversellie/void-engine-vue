@@ -41,7 +41,7 @@
 
 
 import SearchResultList from "./SearchResultList.vue"
-import SearchService from "@/components/SearchService.mjs";
+import SearchService from "@/components/SearchService.js";
 
 export default {
   name: "SearchResultPage.vue",
@@ -60,6 +60,7 @@ export default {
       SearchService.callSearch(this.searchQuery).then(response => {
         console.log(response.data);
         this.results = SearchService.convertToResults(response.data)
+        console.log(this.results)
       });
     }
   }
