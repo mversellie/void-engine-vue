@@ -1,36 +1,36 @@
 <template>
   <div id="search-result-page">
-    <b-container fluid="md">
+    <b-container fluid>
       <b-row class="text-center">
-        <b-col col md="2" sm="12" lg="1"></b-col>
-        <b-col col md="8" sm="12" lg="10">
-          <b-row class="text-center">
-            <b-col col sm=12 md="1">
-            </b-col>
-            <b-col col sm=12 md="10">
-              <h1 class="title">VOID ENGINE</h1>
-              <div class="search-bar">
-                <b-button-toolbar aria-label="Toolbar with button groups and input groups">
-                  <b-button-group size="sm" class="mr-1" v-on:click="search">
-                    <b-button class="search-button">Search</b-button>
-                  </b-button-group>
-                  <b-input-group style={min-width:800px}>
-                    <b-form-input v-model="searchQuery" v-on:keyup.enter="search"
-                                  class="text-right search-field"></b-form-input>
-                  </b-input-group>
-                </b-button-toolbar>
-              </div>
-            </b-col>
-            <b-col col sm=12 md="1">
-            </b-col>
-          </b-row>
-          <b-row class="search-result-list">
-            <search-result-list :results="this.results"/>
-          </b-row>
+        <b-col xs="12" md="1">
         </b-col>
-        <b-col col sm=12 md="2" lg="1">
+        <b-col xs="12" md="10">
+          <h1 class="title"><a class="title-link" href="index.html">VOID ENGINE</a></h1>
+          <div class="search-bar">
+            <b-row class="text-center">
+              <b-col xs="12" md="2"></b-col>
+              <b-col xs="12" md="8">
+                <b-row class="text-center">
+                  <b-col xs="11" md="10">
+                    <b-input-group>
+                      <b-form-input v-model="searchQuery" v-on:keyup.enter="search"
+                                    class="text-right search-field"></b-form-input>
+                    </b-input-group>
+                  </b-col>
+                  <b-col xs="1" md="1">
+                    <b-button class="search-button"  v-on:click="search">Search</b-button>
+                  </b-col>
+                  <b-col xs="12" md="2"></b-col>
+                </b-row>
+              </b-col>
+              <b-col xs="12" md="2"></b-col>
+            </b-row>
+          </div>
+        </b-col>
+        <b-col xs="12" md="1">
         </b-col>
       </b-row>
+      <search-result-list class="search-result-list" :results="this.results"/>
 
     </b-container>
 

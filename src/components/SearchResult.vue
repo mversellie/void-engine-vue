@@ -1,10 +1,14 @@
 <template>
   <b-row>
+    <b-col xs="12" md="1"></b-col>
+    <b-col xs="12" md="10">
     <div class="search-result">
       <h4 class="result-title"><a v-bind:href="url">{{ title }}</a></h4>
       <hr class="result-title-content-border"/>
       <p class="result-desc">{{ description.substring(0, 300) }}</p>
     </div>
+    </b-col>
+    <b-col xs="12" md="1"></b-col>
   </b-row>
 </template>
 
