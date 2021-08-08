@@ -1,4 +1,4 @@
-import SearchService from "@/components/SearchService.mjs"
+import SearchService from "@/services/SearchService.js"
 import axios from "axios";
 import mockSolr from "./mockSolrReturn.js"
 

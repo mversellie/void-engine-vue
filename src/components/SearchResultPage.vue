@@ -8,7 +8,7 @@
             <b-col col sm=12 md="1">
             </b-col>
             <b-col col sm=12 md="10">
-              <h1 class="title">VOID ENGINE</h1>
+              <h1 class="title">VOID ENGINE VUE</h1>
               <div class="search-bar">
                 <b-button-toolbar aria-label="Toolbar with button groups and input groups">
                   <b-button-group size="sm" class="mr-1" v-on:click="search">
@@ -41,7 +41,7 @@
 
 
 import SearchResultList from "./SearchResultList.vue"
-import SearchService from "@/components/SearchService.mjs";
+import SearchService from "@/services/SearchService.js";
 
 export default {
   name: "SearchResultPage.vue",

@@ -10,7 +10,8 @@
   "jest": {
     "transform": {
       "^.+\\.vue$": "vue-jest",
-      "^.+\\.js$": "babel-jest"
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.mjs$": "babel-jest"
     },
     "verbose": true,
     "moduleNameMapper": {
@@ -26,21 +27,23 @@
       "js",
       "jsx",
       "json",
-      "vue"
+      "vue",
+      "mjs"
     ]
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11",
-    "axios": "^0.21.1",
-    "bootstrap-vue": "^2.21.1",
-    "jquery": "^3.5.1",
-    "babel-core": "^7.0.0-bridge.0",
     "@popperjs/core": "^2.6.0",
-    "portal-vue": "^2.1.7",
+    "@vue/cli": "^4.5.13",
+    "axios": "^0.21.1",
+    "babel-core": "^7.0.0-bridge.0",
     "bootstrap": "^4.5.3",
+    "bootstrap-vue": "^2.21.1",
+    "core-js": "^3.6.5",
+    "jquery": "^3.5.1",
+    "portal-vue": "^2.1.7",
+    "sass": "^1.30.0",
     "sass-loader": "^10.1.0",
-    "sass": "^1.30.0"
+    "vue": "^2.6.11"
   },
   "devDependencies": {
     "vue-jest": "^3.0.7",
