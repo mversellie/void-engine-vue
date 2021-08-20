@@ -1,24 +1,8 @@
 # void-engine-vue
+A Vue framework implementation of UI for the Void-Engine search engine.  This is mostly a exploratory/portfolio project.  Feel free to use it however you like.
 
-## Project setup
-```
-npm install
-```
+### Links:
+Preview/Deployment - [vue.voidengine.io](http://vue.voidengine.io)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Backend Spring Implementation Source Code -  [mversellie/void-engine-backend](https://github.com/mversellie/void-engine-backend)
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
