@@ -1,7 +1,7 @@
 <template>
   <span class="search-result-span">
       <search-result v-for="searchResult in results" :url="searchResult.url" :title="searchResult.title"
-                     :key="searchResult.url" :description="searchResult['description'] === null ? searchResult.content : searchResult.description[0]"></search-result>
+                     :key="getDescription(searchResult)"></search-result>
   </span>
 </template>
 
@@ -13,6 +13,22 @@ export default {
   components: {SearchResult},
   props: {
     results: Array
+  },
+  methods:{
+    isEmpty(description){
+      return (description === undefined || description === null);
+    },
+    getDescription(aSearchResult){
+      if (this.isEmpty(aSearchResult.description) || aSearchResult.description.length == 0)  {
+        if (this.isEmpty(aSearchResult.content)) {
+          return "";
+        } else {
+          return aSearchResult.content.substring(0, 300);
+        }
+      } else {
+        return aSearchResult.description[0];
+      }
+    }
   }
 }
 </script>

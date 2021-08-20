@@ -14,7 +14,7 @@
                   <b-button-group size="sm" class="mr-1" v-on:click="search">
                     <b-button class="search-button">Search</b-button>
                   </b-button-group>
-                  <b-input-group style={min-width:800px}>
+                  <b-input-group class="search-outer-bar">
                     <b-form-input v-model="searchQuery" v-on:keyup.enter="search"
                                   class="text-right search-field"></b-form-input>
                   </b-input-group>
@@ -41,7 +41,7 @@
 
 
 import SearchResultList from "./SearchResultList.vue"
-import SearchService from "@/components/SearchService.mjs";
+import SearchService from "@/services/SearchService.js";
 
 export default {
   name: "SearchResultPage.vue",
@@ -49,10 +49,7 @@ export default {
   data: function () {
     return {
       "searchQuery": "",
-      "results": [{
-        "title": "Lorem convallis lacindales tellu.i",
-        "url": "aplace.here"
-      }]
+      "results": []
     }
   },
   methods: {

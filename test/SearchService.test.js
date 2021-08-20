@@ -1,6 +1,7 @@
 import SearchService from "@/services/SearchService.js"
 import axios from "axios";
 import mockSolr from "./mockSolrReturn.js"
+import Config from "../src/config"
 
 jest.mock('axios');
 
@@ -23,7 +24,7 @@ describe("testing search service unit", () => {
 
         var urlArg = axios.get.mock.calls[0][0]
 
-        expect(urlArg).toContain("http://localhost:8983/solr/nutch/select")
+        expect(urlArg).toContain(Config.apiSearchEndpoint)
     });
 
     it('calls axios with return type json', async () => {

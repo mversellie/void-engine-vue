@@ -11,6 +11,7 @@ body {
   margin-right: auto;
   margin-bottom: 20px;
   width: 80%;
+  align-content: center;
 }
 
 .title {
@@ -35,12 +36,17 @@ body {
 }
 
 
+.search-outer-bar {
+  width:80% !important;
+}
+
 .search-field {
   border: 2px solid white !important;
   border-radius: 4px !important;
   background-color: transparent !important;
   color: white !important;
   font-family: "vapor_text" !important;
+  width: 100%;
 }
 
 #app {

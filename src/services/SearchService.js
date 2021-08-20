@@ -1,9 +1,9 @@
 import axios from "axios";
-var apiEndpoint = "http://api.voidengine.io/search";
+import config from "../config"
+var apiEndpoint = config.apiSearchEndpoint;
 
 export default {
     callSearch: function (query) {
-        //var defaultQuery = "*:*";
         var generatedQuery = "";
         var config = {};
 
@@ -20,12 +20,13 @@ export default {
         return axios.get(apiEndpoint, config)
     },
 
-    serializeParams:function (params){
+    serializeParams: function (params) {
         var result = "query=" + params['query'].replace(/\s/g, '%20');
         return result;
     },
 
     convertToResults: function (raw) {
+        console.log(raw.results);
         return raw.results;
-    }
+    },
 }
