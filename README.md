@@ -1,6 +1,5 @@
 # void-engine-vue
-A Vue framework implementation of UI for the Void-Engine search engine.  This is mostly a exploratory/portfolio project.  Feel free to use it however you like.
-
+A Vue framework implementation of UI for the Void-Engine search engine.  This is mostly a exploratory/portfolio project.
 ### Links:
 Preview/Deployment - [vue.voidengine.io](http://vue.voidengine.io)
 
