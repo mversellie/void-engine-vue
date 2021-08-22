@@ -18,12 +18,14 @@
                     <b-form-input v-model="searchQuery" v-on:keyup.enter="search"
                                   class="text-right search-field"></b-form-input>
                   </b-input-group>
+                  <a target="_blank" rel="noopener noreferrer" href="https://github.com/mversellie/void-engine-vue"> <img alt="" :src="gitHubImage" width="30px" height="30px"/></a>
                 </b-button-toolbar>
               </div>
             </b-col>
             <b-col col sm=12 md="1">
             </b-col>
           </b-row>
+          <search-result-statistics :numberOfResults="searchCount" />
           <b-row class="search-result-list">
             <search-result-list :results="this.results"/>
           </b-row>
@@ -39,23 +41,28 @@
 
 <script>
 
-
-import SearchResultList from "./SearchResultList.vue"
+import gitImage from "../assets/GitHub-Mark-Light.png"
+import SearchResultList from "./SearchResultList.vue";
 import SearchService from "@/services/SearchService.js";
+import SearchResultStatistics from "@/components/SearchResultStatistics";
 
 export default {
+
   name: "SearchResultPage.vue",
-  components: {SearchResultList},
+  components: {SearchResultStatistics, SearchResultList},
   data: function () {
     return {
       "searchQuery": "",
-      "results": []
+      "results": [],
+      "searchCount":-1,
+      "gitHubImage":gitImage
     }
   },
   methods: {
     search() {
       SearchService.callSearch(this.searchQuery).then(response => {
         console.log(response.data);
+        this.searchCount = response.data.resultCount;
         this.results = SearchService.convertToResults(response.data)
       });
     }
