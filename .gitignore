@@ -22,4 +22,5 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
+dist.tar.gz
 package-lock.json
