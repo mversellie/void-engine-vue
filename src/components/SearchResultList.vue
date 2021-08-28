@@ -1,7 +1,7 @@
 <template>
   <span class="search-result-span">
-      <search-result v-for="searchResult in results" :url="searchResult.url" :title="searchResult.title"
-                     :key="getDescription(searchResult)"></search-result>
+      <search-result v-for="searchResult in results" :url="searchResult.url" :title="searchResult.title" :key="searchResult.url"
+                     :description="getDescription(searchResult)"></search-result>
   </span>
 </template>
 
