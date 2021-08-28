@@ -27,31 +27,6 @@ describe("testing search service unit", () => {
         expect(urlArg).toContain(Config.apiSearchEndpoint)
     });
 
-    it('calls axios with return type json', async () => {
-
-        axios.get.mockResolvedValue(mockSolr.mockLucene());
-
-        SearchService.callSearch("dzone work");
-
-        var parameters = axios.get.mock.calls[0][1];
-
-
-        expect(parameters.params.wt).toBe("json")
-    });
-
-    it('calls axios with search terms', async () => {
-
-        var testNumber = 2;
-
-        axios.get.mockResolvedValue(mockSolr.mockLucene());
-
-        SearchService.callSearch("dzone work");
-
-        var parameters = axios.get.mock.calls[testNumber][1];
-
-        expect(parameters.params.q).toContain('content:"dzone work"');
-    });
-
     it('calls axios with search terms in content', async () => {
 
         var testNumber = 2;
@@ -62,37 +37,7 @@ describe("testing search service unit", () => {
 
         var parameters = axios.get.mock.calls[testNumber][1];
 
-        expect(parameters.params.q).toContain('content:"dzone work"');
-    });
-
-    it('calls axios with search terms in description', async () => {
-
-        var testNumber = 2;
-
-        axios.get.mockResolvedValue(mockSolr.mockLucene());
-
-        SearchService.callSearch("dzone work");
-
-        var parameters = axios.get.mock.calls[testNumber][1];
-
-        expect(parameters.params.q).toContain('metatag.description:"dzone work"');
-    });
-
-    it('calls axios with * if blank query', async () => {
-        axios.get.mockResolvedValue(mockSolr.mockLucene());
-
-        SearchService.callSearch("");
-
-        var parameters = axios.get.mock.calls[0][1];
-
-        expect(parameters.params.q).toBe('*:*');
-    });
-
-    it('convertToResults Works', async () => {
-        var actual = SearchService.convertToResults(mockSolr.mockLucene());
-        var expected = mockSolr.mockLucene().response.docs;
-
-        expect(actual).toStrictEqual(expected);
+        expect(parameters.params.query).toContain("dzone work");
     });
 
 });

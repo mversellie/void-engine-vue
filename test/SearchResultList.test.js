@@ -7,6 +7,7 @@ describe("testing search result list component", () => {
     var aSingleResultData = {
         "title": "a Title",
         "url": "aplace.here"
+        "description":"the description"
     };
 
     var resultsList = {
@@ -28,6 +29,7 @@ describe("testing search result list component", () => {
         var actualSingleResultComponent = renderedComponent.findComponent(SearchResultComponent)
 
         expect(actualSingleResultComponent.exists()).toBeTruthy();
+        expect(actualSingleResultComponent.pa)
     });
 
 
